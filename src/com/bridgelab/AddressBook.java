@@ -13,23 +13,29 @@ public class AddressBook implements IAddressBook {
     public void createContact() {
         PersonDetails personDetails = new PersonDetails();
         System.out.println("Enter Your First Name: ");
-        personDetails.setFirstName(input.next());
-        System.out.println("Enter Your Last Name: ");
-        personDetails.setLastName(input.next());
-        System.out.println("Enter Your Address: ");
-        personDetails.setAddress(input.next());
-        System.out.println("Enter Your City: ");
-        personDetails.setCity(input.next());
-        System.out.println("Enter Your State: ");
-        personDetails.setState(input.next());
-        System.out.println("Enter Your Zip code: ");
-        personDetails.setZip(input.nextInt());
-        System.out.println("Enter Your Email Id: ");
-        personDetails.setEmail(input.next());
-        System.out.println("Enter Your Mobile Number: ");
-        personDetails.setPhoneNumber(input.nextLong());
-        contact.add(personDetails);
-        System.out.println("contact added successfully");
+        String firstName = input.next();
+        if(!contact.isEmpty()) {
+            boolean isPresent = contact.stream().findFirst().equals(firstName);
+            System.out.println("Contact already added");
+            return;
+        }
+            personDetails.setFirstName(firstName);
+            System.out.println("Enter Your Last Name: ");
+            personDetails.setLastName(input.next());
+            System.out.println("Enter Your Address: ");
+            personDetails.setAddress(input.next());
+            System.out.println("Enter Your City: ");
+            personDetails.setCity(input.next());
+            System.out.println("Enter Your State: ");
+            personDetails.setState(input.next());
+            System.out.println("Enter Your Zip code: ");
+            personDetails.setZip(input.nextInt());
+            System.out.println("Enter Your Email Id: ");
+            personDetails.setEmail(input.next());
+            System.out.println("Enter Your Mobile Number: ");
+            personDetails.setPhoneNumber(input.nextLong());
+            contact.add(personDetails);
+            System.out.println("contact added successfully");
     }
 
     @Override
