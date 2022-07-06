@@ -1,6 +1,6 @@
 package com.bridgelab;
 
-public class PersonDetails {
+public class Contacts {
     private String firstName;
     private String lastName;
     private String address;
@@ -11,7 +11,7 @@ public class PersonDetails {
     private Long phoneNumber;
 
 
-    public PersonDetails(String firstName, String lastName, String address, String city, String state, Integer zip, String email, Long phoneNumber) {
+    public Contacts(String firstName, String lastName, String address, String city, String state, Integer zip, String email, Long phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -22,7 +22,7 @@ public class PersonDetails {
         this.phoneNumber = phoneNumber;
     }
 
-    public PersonDetails() {
+    public Contacts() {
     }
 
     public void setFirstName(String firstName) {
@@ -91,7 +91,7 @@ public class PersonDetails {
 
     @Override
     public String toString() {
-        return "PersonDetails{" +
+        return "Contacts{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
