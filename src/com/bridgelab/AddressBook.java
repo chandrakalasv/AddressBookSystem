@@ -39,8 +39,12 @@ public class AddressBook {
                     break;
                 case 5:
                     sortContactByName();
+                    break;
                 case 6:
                     sortContactByCityAndState();
+                    break;
+                case 7:
+                    File_read_and_write();
                     break;
                 default:
                     status = false;
@@ -174,6 +178,14 @@ public class AddressBook {
         System.out.println();
         list.stream().sorted(Comparator.comparing(Contacts::getState)).forEach(System.out::println);
     }
+    private  void File_read_and_write() {
+        AddressBookIO.createFile();
+        String input = list.toString();
+        AddressBookIO.add_details_to_file(input);
+        AddressBookIO.read_details_to_file();
+    }
+
+
     @Override
     public String toString() {
         return "AddressBook{" +
